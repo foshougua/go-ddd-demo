@@ -15,6 +15,8 @@ func Recovery(c *gin.Context) {
 				"errmsg":  "服务内部错误",
 				"data":    make(map[string]interface{}),
 			})
+			return
 		}
 	}()
+	c.Next() // execute all the handlers
 }

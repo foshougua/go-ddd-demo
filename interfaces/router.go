@@ -10,6 +10,7 @@ import (
 func RouterLoad(g *gin.Engine) *gin.Engine {
 	// Middlewares
 	g.Use(middleware.Recovery)
+	g.Use(middleware.CORSMiddleware())
 
 	// 404 Handler
 	g.NoRoute(func(c *gin.Context) {
